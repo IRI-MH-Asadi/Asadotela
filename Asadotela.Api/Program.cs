@@ -1,5 +1,7 @@
-using Asadotela.Api;
+using Asadotela.Api.Configurations;
 using Asadotela.Api.Data;
+using Asadotela.Api.IRepository;
+using Asadotela.Api.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -14,16 +16,15 @@ builder.Host.UseSerilog();
 builder.Services.AddDbContext<DataBaseContext>(o =>
     o.UseSqlServer("Server=.;Database=Asadotela.db;Trusted_Connection=True;TrustServerCertificate=True")
 );
-builder.Services.AddCors(o =>
-{
-    o.AddPolicy("AllowAll",b => 
-            b.AllowAnyOrigin()
-             .AllowCredentials()
-             .AllowAnyHeader()
-    );
+builder.Services.AddCors(o => {
+    o.AddPolicy("AllowAll", builder =>
+        builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
 });
 
 builder.Services.AddAutoMapper(typeof(MapperInitializer));
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -32,6 +33,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1" , new OpenApiInfo{Title = "Asadotela", Version = "v1"});
 });
+builder.Services.AddControllers().AddNewtonsoftJson(builder => builder.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 builder.Host.UseSerilog((ctx,lc) =>lc
     .WriteTo.Console()

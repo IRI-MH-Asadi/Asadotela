@@ -2,7 +2,7 @@
 using Asadotela.Api.Models;
 using AutoMapper;
 
-namespace Asadotela.Api;
+namespace Asadotela.Api.Configurations;
 
 public class MapperInitializer : Profile
 {
