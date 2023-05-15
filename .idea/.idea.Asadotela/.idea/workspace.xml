@@ -10,71 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="826c7c28-63c9-40dd-91c8-8247c510c5e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/Asadotela.Api.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/Controllers/WeatherForecastController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Asadotela.Api.deps.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Asadotela.Api.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Asadotela.Api.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Asadotela.Api.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Asadotela.Api.runtimeconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Microsoft.OpenApi.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.AspNetCore.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Extensions.Hosting.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Extensions.Logging.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Formatting.Compact.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Settings.Configuration.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Sinks.Console.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Sinks.Debug.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.Sinks.File.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Serilog.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/bin/Debug/net7.0/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Asadotela.Api.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Asadotela.Api.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Asadotela.Api.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.MvcApplicationPartsAssemblyInfo.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.csproj.CopyComplete" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.genruntimeconfig.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.pdb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/apphost.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/ref/Asadotela.Api.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/refint/Asadotela.Api.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/staticwebassets/msbuild.build.Asadotela.Api.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.Asadotela.Api.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.Asadotela.Api.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/project.nuget.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/project.packagespec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.Api/obj/rider.project.restore.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Asadotela.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Asadotela/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Asadotela.Api/obj/Debug/net7.0/Asadotela.Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asadotela.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Asadotela.Api/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +20,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
   <component name="ProjectId" id="2PmV54M3rYH8MI5GQw0J4QjN4HZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -169,7 +124,17 @@
       <option name="presentableId" value="Default" />
       <updated>1684062063779</updated>
       <workItem from="1684062084413" duration="7983000" />
+      <workItem from="1684081764470" duration="1475000" />
+      <workItem from="1684094661015" duration="1998000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1684082020919</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684082020920</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +152,17 @@
                   <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
@@ -195,5 +171,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>
 </project>
