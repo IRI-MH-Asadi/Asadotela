@@ -1,4 +1,6 @@
-using Microsoft.AspNetCore.Components.Web;
+using Asadotela.Api;
+using Asadotela.Api.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
@@ -9,15 +11,21 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddDbContext<DataBaseContext>(o =>
+    o.UseSqlServer("Server=.;Database=Asadotela.db;Trusted_Connection=True;TrustServerCertificate=True")
+);
 builder.Services.AddCors(o =>
 {
     o.AddPolicy("AllowAll",b => 
             b.AllowAnyOrigin()
-                .AllowCredentials()
-                .AllowAnyHeader()
+             .AllowCredentials()
+             .AllowAnyHeader()
     );
 });
+
+builder.Services.AddAutoMapper(typeof(MapperInitializer));
+
+builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
