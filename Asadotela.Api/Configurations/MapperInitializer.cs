@@ -8,6 +8,7 @@ public class MapperInitializer : Profile
 {
     public MapperInitializer()
     {
+        CreateMap<ApiUser, UserDTO>().ReverseMap();
         CreateMap<Country, CountryDTO>().ReverseMap();
         CreateMap<Country, CreateCountryDTO>().ReverseMap();
         CreateMap<Hotel, HotelDTO>().ReverseMap();

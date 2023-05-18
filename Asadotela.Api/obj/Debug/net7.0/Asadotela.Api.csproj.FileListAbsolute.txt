@@ -89,3 +89,15 @@ F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dl
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Newtonsoft.Json.dll
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.Core.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.Core.UI.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.InfoCard.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.InfoCard.UI.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\System.Net.Http.WebRequest.dll

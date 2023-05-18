@@ -1,6 +1,7 @@
 ﻿using Asadotela.Api.IRepository;
 using Asadotela.Api.Models;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,7 @@ namespace Asadotela.Api.Controllers
         private readonly IUnitOfWork _db;
         private readonly ILogger<HotelController> _logger;
         private readonly IMapper _mapper;
+
         public HotelController(IUnitOfWork db, ILogger<HotelController> logger, IMapper mapper)
         {
             _logger = logger;
@@ -42,6 +44,10 @@ namespace Asadotela.Api.Controllers
                 return StatusCode(500, "Internal Server Error. Please Try Again later.");
             }
         }
+
+
+
+        [Authorize]//todo: here Not work by any token
         [HttpGet("{id:int}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
