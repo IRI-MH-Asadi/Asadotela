@@ -20,6 +20,11 @@ public class CreateHotelDTO
     
 }
 
+public class UpadateHotelDTO:CreateHotelDTO
+{
+
+}
+
 public class HotelDTO : CreateHotelDTO
 {
     public int Id { get; set; }

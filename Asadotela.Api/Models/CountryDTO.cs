@@ -13,6 +13,11 @@ public class CreateCountryDTO
     public string ShortName { get; set; }
 }
 
+public class UpdateCountryDTO:CreateCountryDTO
+{
+    IList<CreateHotelDTO> Hotels { get; set; }
+}
+
 public class CountryDTO : CreateCountryDTO
 {
     public int Id { get; set; }
