@@ -101,3 +101,9 @@ F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.Core.UI.dll
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.InfoCard.dll
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\DotNetOpenAuth.InfoCard.UI.dll
 F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\System.Net.Http.WebRequest.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\JetBrains.Annotations.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\X.PagedList.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\Marvin.Cache.Headers.dll
+F:\C#\Asadotela\Asadotela.Api\bin\Debug\net7.0\AspNetCoreRateLimit.dll

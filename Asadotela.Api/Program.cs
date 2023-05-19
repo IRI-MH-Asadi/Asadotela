@@ -4,6 +4,7 @@ using Asadotela.Api.Data;
 using Asadotela.Api.IRepository;
 using Asadotela.Api.Repository;
 using Asadotela.Api.Services;
+using AspNetCoreRateLimit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -16,24 +17,25 @@ string connectionString = builder.Configuration.GetConnectionString("MyDatabase"
 builder.Host.UseSerilog();
 
 
-
-
-
-#region Services
-
+        #region Services
 
 // Add services to the container.
 builder.Services.AddDbContext<DataBaseContext>(o =>
     o.UseSqlServer(connectionString)
 );
 
-//IdentityUser
+
 builder.Services.AddMemoryCache();
 
+builder.Services.ConfigureRateLimiting();
 builder.Services.AddHttpContextAccessor();
 
-//builder.Services.ConfigureHttpContextAccssor();
+builder.Services.ConfigureHttpCacheHeaders();
+//IdentityUser
 
+
+//builder.Services.ConfigureHttpContextAccessor();
+builder.Services.AddResponseCaching();
 builder.Services.AddAuthentication();
 builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJWT(builder.Configuration);
@@ -43,8 +45,8 @@ builder.Services.AddCors(o =>
 {
     o.AddPolicy("AllowAll", builder =>
         builder.AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader());
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 });
 
 //builder.Services.ConfigureAutoMapper();
@@ -54,7 +56,13 @@ builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthManager, AuthManager>();
 builder.Services.AddAutoMapper(typeof(MapperInitializer));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(config =>
+{
+    config.CacheProfiles.Add("120SecondsDuration", new Microsoft.AspNetCore.Mvc.CacheProfile
+    {
+        Duration = 120,
+    });
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 //builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asadotela", Version = "v1" }));
@@ -63,9 +71,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = @"JWT Authorization header using the Beare scheme.
-Enter 'Bearer' [space] and then your token in the text input below.
-Example: 'Bearer 12345abcdef'",
+        Description = @"JWT Authorization header using the Bearer scheme.
+            Enter 'Bearer' [space] and then your token in the text input below.
+            Example: 'Bearer 12345abcdef'",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -74,28 +82,28 @@ Example: 'Bearer 12345abcdef'",
 
     c.AddSecurityRequirement(new OpenApiSecurityRequirement()
     {
-        { new OpenApiSecurityScheme
+        {
+            new OpenApiSecurityScheme
             {
-                Reference= new OpenApiReference{Type=ReferenceType.SecurityScheme,Id="Bearer"},
-                Scheme= "Oauth2",
-                Name="Bearer",
-                In=ParameterLocation.Header
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" },
+                Scheme = "Oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header
             },
-                new List<string>()
+            new List<string>()
         }
     });
 
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Asadotela", Version = "v1" });
 });
 
-
-
-
 builder.Services.AddControllers().AddNewtonsoftJson(op =>
-                op.SerializerSettings.ReferenceLoopHandling =
-                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-#endregion
+    op.SerializerSettings.ReferenceLoopHandling =
+        Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
+builder.Services.ConfigureVersioning();
+
+        #endregion
 
 
 // Config Serilog Logger
@@ -117,9 +125,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.ConfigureExceptionHandler();
+
 app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
+
+app.UseResponseCaching();
+
+app.UseHttpCacheHeaders();
+
+app.UseIpRateLimiting();
 
 app.UseRouting();
 

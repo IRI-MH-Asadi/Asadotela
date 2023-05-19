@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Asadotela.Api.Controllers
 {
@@ -24,26 +25,19 @@ namespace Asadotela.Api.Controllers
         }
 
 
-
-
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetHotels()
+        public async Task<IActionResult> GetHotels([FromQuery] RequestParams requestParams)
         {
-            try
-            {
-                var hotels = await _db.Hotels.GetAllAsync(includes: new List<string> { "Country" });
-                var result = _mapper.Map<List<HotelDTO>>(hotels);
 
-                return Ok(result);
+            var hotels = await _db.Hotels.GetAllAsync(requestParams, includes: q=>q.Include(i=>i.Country));
+            var result = _mapper.Map<List<HotelDTO>>(hotels);
 
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, $"Something went wrong in the {nameof(GetHotels)}");
-                return StatusCode(500, "Internal Server Error. Please Try Again later.");
-            }
+            return Ok(result);
+
+
+
         }
 
 
@@ -54,20 +48,16 @@ namespace Asadotela.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetHotel(int id)
         {
-            try
-            {
-                var hotel = await _db.Hotels.GetAsync(q => q.Id == id, new List<string> { "Country" });
-                var result = _mapper.Map<HotelDTO>(hotel);
 
-                return Ok(result);
+            var hotel = await _db.Hotels.GetAsync(q => q.Id == id, q=>q.Include(i=>i.Country));
+            var result = _mapper.Map<HotelDTO>(hotel);
 
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, $"Something went wrong in the {nameof(GetHotel)}");
-                return StatusCode(500, "Internal Server Error. Please Try Again later.");
-            }
+            return Ok(result);
+
+
         }
+
+
         [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -82,21 +72,15 @@ namespace Asadotela.Api.Controllers
             }
 
 
-            try
-            {
-                var data = _mapper.Map<Hotel>(dto);
-                await _db.Hotels.InsertAsync(data);
-                await _db.Save();
+            var data = _mapper.Map<Hotel>(dto);
+            await _db.Hotels.InsertAsync(data);
+            await _db.Save();
 
-                return CreatedAtRoute("GetHotel", new { id = data.Id }, data);
+            return CreatedAtRoute("GetHotel", new { id = data.Id }, data);
 
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, $"Something went wrong in the {nameof(CreateHotel)}");
-                return StatusCode(500, "Internal Server Error. Please Try Again later.");
-            }
+
         }
+
 
         [Authorize]
         [HttpPut("{id:int}")]
@@ -112,26 +96,20 @@ namespace Asadotela.Api.Controllers
             }
 
 
-            try
+            var hotel = await _db.Hotels.GetAsync(q => q.Id == id);
+            if (hotel == null)
             {
-                var hotel = await _db.Hotels.GetAsync(q => q.Id == id);
-                if (hotel == null)
-                {
-                    _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateHotel)}");
-                    return BadRequest("Submitted data is invalid");
-                }
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(UpdateHotel)}");
+                return BadRequest("Submitted data is invalid");
+            }
 
-                _mapper.Map(dto, hotel);
-                _db.Hotels.Update(hotel);
-                await _db.Save();
-                return NoContent();
-            }
-            catch (Exception e)
-            {
-                _logger.LogError(e, $"Something went wrong in the {nameof(UpdateHotel)}");
-                return StatusCode(500, "Internal Server Error. Please Try Again later.");
-            }
+            _mapper.Map(dto, hotel);
+            _db.Hotels.Update(hotel);
+            await _db.Save();
+            return NoContent();
+
         }
+
 
         [Authorize(Roles = "Administrator")]
         [HttpDelete("{id:int}")]
@@ -140,25 +118,20 @@ namespace Asadotela.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteHotel(int id)
         {
-            try
-            {
-                var hotel = await _db.Hotels.GetAsync(g => g.Id == id);
-                if (hotel == null)
-                {
-                    _logger.LogError($"Invalid Delete attempt in {nameof(DeleteHotel)}");
-                    return BadRequest($"No Hotel found with Id = {id}");
-                }
 
-                await _db.Hotels.DeleteAsync(id);
-                await _db.Save();
-
-                return NoContent();
-            }
-            catch (Exception e)
+            var hotel = await _db.Hotels.GetAsync(g => g.Id == id);
+            if (hotel == null)
             {
-                _logger.LogError(e, $"Something went wrong in the {nameof(DeleteHotel)}");
-                return StatusCode(500, "Internal Server Error. Please Try Again later.");
+                _logger.LogError($"Invalid Delete attempt in {nameof(DeleteHotel)}");
+                return BadRequest($"No Hotel found with Id = {id}");
             }
+
+            await _db.Hotels.DeleteAsync(id);
+            await _db.Save();
+
+            return NoContent();
+
+
         }
     }
 }
